@@ -94,7 +94,7 @@ grammar = {
 
 first_sets = compute_first(grammar)
 follow_sets = compute_follow(grammar, first_sets)
-parsing_table = construct_parsing_table(grammar, first_sets, follow_sets)
+# parsing_table = construct_parsing_table(grammar, first_sets, follow_sets)
 
 # Define first sets
 # first_sets = {
@@ -123,64 +123,64 @@ parsing_table = construct_parsing_table(grammar, first_sets, follow_sets)
 # }
 
 # LL(1) Parsing Table
-# parsing_table = {
-#     'S': {
-#         'the': ['NP', 'VP'],
-#         'a': ['NP', 'VP'],
-#         'an': ['NP', 'VP'],
-#         'John': ['NP', 'VP'],
-#         'Mary': ['NP', 'VP']
-#     },
-#     'NP': {
-#         'the': ['Det', 'N'],
-#         'a': ['Det', 'N'],
-#         'an': ['Det', 'N'],
-#         'John': ['PN'],
-#         'Mary': ['PN']
-#     },
-#     'VP': {
-#         'hit': ['V', 'NP'],
-#         'saw': ['V', 'NP'],
-#         'kicked': ['V', 'NP'],
-#         'ran': ['V', 'PP'],
-#         'ate': ['V', 'PP']
-#     },
-#     'PP': {
-#         'with': ['P', 'NP'],
-#         'in': ['P', 'NP'],
-#         'on': ['P', 'NP'],
-#         'at': ['P', 'NP']
-#     },
-#     'Det': {
-#         'the': ['the'],
-#         'a': ['a'],
-#         'an': ['an']
-#     },
-#     'N': {
-#         'man': ['man'],
-#         'dog': ['dog'],
-#         'cat': ['cat'],
-#         'ball': ['ball'],
-#         'house': ['house']
-#     },
-#     'PN': {
-#         'John': ['John'],
-#         'Mary': ['Mary']
-#     },
-#     'V': {
-#         'hit': ['hit'],
-#         'saw': ['saw'],
-#         'kicked': ['kicked'],
-#         'ran': ['ran'],
-#         'ate': ['ate']
-#     },
-#     'P': {
-#         'with': ['with'],
-#         'in': ['in'],
-#         'on': ['on'],
-#         'at': ['at']
-#     }
-# }
+parsing_table = {
+    'S': {
+        'the': ['NP', 'VP'],
+        'a': ['NP', 'VP'],
+        'an': ['NP', 'VP'],
+        'John': ['NP', 'VP'],
+        'Mary': ['NP', 'VP']
+    },
+    'NP': {
+        'the': ['Det', 'N'],
+        'a': ['Det', 'N'],
+        'an': ['Det', 'N'],
+        'John': ['PN'],
+        'Mary': ['PN']
+    },
+    'VP': {
+        'hit': ['V', 'NP'],
+        'saw': ['V', 'NP'],
+        'kicked': ['V', 'NP'],
+        'ran': ['V', 'PP'],
+        'ate': ['V', 'PP']
+    },
+    'PP': {
+        'with': ['P', 'NP'],
+        'in': ['P', 'NP'],
+        'on': ['P', 'NP'],
+        'at': ['P', 'NP']
+    },
+    'Det': {
+        'the': ['the'],
+        'a': ['a'],
+        'an': ['an']
+    },
+    'N': {
+        'man': ['man'],
+        'dog': ['dog'],
+        'cat': ['cat'],
+        'ball': ['ball'],
+        'house': ['house']
+    },
+    'PN': {
+        'John': ['John'],
+        'Mary': ['Mary']
+    },
+    'V': {
+        'hit': ['hit'],
+        'saw': ['saw'],
+        'kicked': ['kicked'],
+        'ran': ['ran'],
+        'ate': ['ate']
+    },
+    'P': {
+        'with': ['with'],
+        'in': ['in'],
+        'on': ['on'],
+        'at': ['at']
+    }
+}
 
 class LL1Parser:
     def __init__(self, grammar, parsing_table):
