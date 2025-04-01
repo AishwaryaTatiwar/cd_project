@@ -161,7 +161,8 @@ parsing_table = {
         'dog': ['dog'],
         'cat': ['cat'],
         'ball': ['ball'],
-        'house': ['house']
+        'house': ['house'],
+        'priya':['priya']
     },
     'PN': {
         'John': ['John'],
